@@ -23,8 +23,6 @@ Welcome to our Streamlit Web Development Lab01 app! You can navigate between the
 
 1. **Portfolio**: Nathan Kim's portfolio. Inclues work experience, skills, and more.
 2. **Headphone Quiz**: Answer questions and I can recommend the best headphones for you based on your sound preferences!
-3.
-4.
 
 """)
 

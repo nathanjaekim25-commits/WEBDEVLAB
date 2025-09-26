@@ -206,7 +206,7 @@ def generateAnswer():
             st.write("Sorry, we currently do not have any recommendations for you")
     elif not st.session_state.isBluetooth:
         if not st.session_state.isOpen:
-            if st.session_state.budget == 100 and ("Rock" in st.session_state.genrePref) or ("Rap" in st.session_state.genrePref):
+            if st.session_state.budget == 100 and (("Rock" in st.session_state.genrePref) or ("Rap" in st.session_state.genrePref)):
                 hd400s()
             elif st.session_state.budget == 100:
                 m20x()
@@ -214,39 +214,44 @@ def generateAnswer():
                 DT770()
             elif st.session_state.bassLiking <= 5:
                 celestee()
-            elif ("Classical" in st.session_state.genrePref) or ("Singer Songwriter" in st.session_state.genrePref) and st.session_state.budget >= 2500:
+            elif (("Classical" in st.session_state.genrePref) or ("Singer Songwriter" in st.session_state.genrePref)) and st.session_state.budget >= 2500:
                 stellia()
-            elif st.session_state.bassLiking > 5 and "Electronic" or "Pop" or "R&B" in st.session_state.genrePref:
+            elif st.session_state.bassLiking > 5 and "R&B" in st.session_state.genrePref:
                 akg371()
             else:
                 DT1770Pro()
         elif st.session_state.isOpen:
-            if st.session_state.budget == 100 and "Rock" or "Pop" in st.session_state.genrePref:
+            if st.session_state.budget == 100 and ("Rock" in st.session_state.genrePref or "Pop" in st.session_state.genrePref):
                 grado80()
             elif st.session_state.budget == 100:
                 portaPro()
-            elif ("Classical" in st.session_state.genrePref) or ("Singer Songwriter" in st.session_state.genrePref) and st.session_state.budget <= 1000:
+            elif (("Classical" in st.session_state.genrePref) or ("Singer Songwriter" in st.session_state.genrePref)) and st.session_state.budget <= 1000:
                 if st.session_state.budget == 300:
                     HD560s()
-                if st.session_state.budget == 1000:
+                elif st.session_state.budget == 1000:
                     HD600s()
-            elif st.session_state.bassLiking > 5 or ("Rap" in st.session_state.genrePref) or ("R&B" in st.session_state.genrePref):
+                else:
+                    HD560s()
+            elif st.session_state.bassLiking > 5 or (("Rap" in st.session_state.genrePref) or ("R&B" in st.session_state.genrePref)):
                 if st.session_state.budget == 300:
                     sundara()
-                if st.session_state.budget == 1000:
+                elif st.session_state.budget == 1000:
                     ananda()
+                else:
+                    sundara()
             elif st.session_state.budget == 1000:
                 focalClear()
             elif st.session_state.budget == 2500 and st.session_state.bassLiking <= 4:
                 HD800s()
             elif st.session_state.bassLiking > 4 and st.session_state.budget == 2500:
                 z1r()
-            elif st.session_state.budget >= 10000:
-                if (("Rap" in st.session_state.genrePref) or ("Rock" in st.session_state.genrePref) and st.session_state.bassLiking >= 8):
+            elif st.session_state.budget == 200000 or st.session_state.budget == "":
+                if (("Rap" in st.session_state.genrePref) or ("Rock" in st.session_state.genrePref)) and st.session_state.bassLiking >= 8:
                     shangrila()
                 else:
                     HE1()
             else:
+                HE1()
                 st.write("Sorry, we currently do not have any recommendations for you")
 
 
@@ -310,5 +315,3 @@ def answerSubmit():
 answerSubmit()
 
     
-
-

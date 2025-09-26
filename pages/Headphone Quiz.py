@@ -220,7 +220,7 @@ def generateAnswer():
                 akg371()
             else:
                 DT1770Pro()
-        elif isOpen:
+        elif st.session_state.isOpen:
             if st.session_state.budget == 100 and "Rock" or "Pop" in st.session_state.genrePref:
                 grado80()
             elif st.session_state.budget == 100:
@@ -310,3 +310,4 @@ def answerSubmit():
 answerSubmit()
 
     
+

@@ -241,7 +241,7 @@ def generateAnswer():
                 HD800s()
             elif st.session_state.bassLiking > 4 and st.session_state.budget == 2500:
                 z1r()
-            elif st.session_state.budget == 10000:
+            elif st.session_state.budget >= 10000:
                 if (("Rap" in st.session_state.genrePref) or ("Rock" in st.session_state.genrePref) and st.session_state.bassLiking >= 8):
                     shangrila()
                 else:
@@ -310,4 +310,5 @@ def answerSubmit():
 answerSubmit()
 
     
+
 
